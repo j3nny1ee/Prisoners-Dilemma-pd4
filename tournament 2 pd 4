@@ -109,7 +109,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     as the first character and the most recent round as the last character.'''
       
     ######
-    ######Ms. Barnett
+    ######
     #
     # This example player always colludes
     if player == 0:
@@ -126,7 +126,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
                             
     ######
     ######
-    #Erin Burke
+    #
     #This example player always betrays.      
     elif player == 1:
         if getting_team_name:
@@ -200,11 +200,11 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
 
 
     ######
-    ######Yoselin Prado
+    ######
     #
     elif player == 4:
         if getting_team_name:
-            return 'loyal vengeful'
+            return 'betray every 3rd round'
         else:
             # use history, opponent_history, score, opponent_score
             # to compute your strategy
@@ -257,12 +257,12 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
         else:
             # use history, opponent_history, score, opponent_score
             # to compute your strategy
-            if len(opponent_history)==0: #It's the first round: collude
-                return 'c'
+            if len(opponent_history)==0:
+                return 'b'
             elif history[-1]=='c' and opponent_history[-1]=='b':
                 return 'b' # betray is they were severely punished last time
             else:
-                return 'c' #otherwise collude
+                return 'b' #otherwise collude
     
 
 
@@ -302,8 +302,8 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
 
     ######
     ######        
-    #Aria Wesson
-      elif player == 8:
+    #
+    elif player == 8:
         if getting_team_name:
             #if there was a previous round just like 
             return 'loyal vengeful with permanent second impression'
@@ -311,7 +311,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
             # use history, opponent_history, score, opponent_score
             # to compute your strategy      
             if len(opponent_history)==0: #It's the first round: collude
-                return '0'
+                return 'c'
             else:
                 # if there was a previous round just like the last one,
                 # do whatever they did in the round that followed it
@@ -327,10 +327,10 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
                             (prior_round_opponent == recent_round_opponent):
                         return opponent_history[round]
                 # no match found
-                if history[-1]=='0' and opponent_history[-1]=='0':
-                    return '0' # betray is they were severely punished last time
+                if history[-1]=='c' and opponent_history[-1]=='b':
+                    return 'b' # betray is they were severely punished last time
                 else:
-                    return '0' #otherwise collude
+                    return 'c' #otherwise collude
 
 
 
@@ -371,31 +371,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     ######
     ######
     #
-    elif player == 10: #Ava Toy
-        if getting_team_name:
-            return 'loyal vengeful'
-        else:
-            # use history, opponent_history, score, opponent_score
-            # to compute your strategy
-            if len(opponent_history)==0: #It's the first round: collude
-                return 'c + 10000'
-            elif history[-1]=='c' and opponent_history[-1]=='b':
-                return 'b + 40000' # betray is they were severely punished last time
-            else:
-                return '0' #otherwise collude
-
-
-
-
-
-
-
-
-
-    ######
-    ######
-    #CheyanneJoseph
-    elif player == 11:
+    elif player == 10:
         if getting_team_name:
             return 'loyal vengeful'
         else:
@@ -416,19 +392,46 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
 
 
 
-
     ######
     ######
-    # Sanchita Kedia
-    elif player == 12:
-         if getting_team_name:
-            return 'backstabber'
+    #
+    elif player == 11:
+        if getting_team_name:
+            return 'loyal vengeful'
         else:
-            return 'b'
+            # use history, opponent_history, score, opponent_score
+            # to compute your strategy
+            if len(opponent_history)==0: #It's the first round: collude
+                return 'c'
+            elif history[-1]=='c' and opponent_history[-1]=='b':
+                return 'b' # betray is they were severely punished last time
+            else:
+                return 'c' #otherwise collude
 
 
 
 
+
+
+
+
+
+
+    ######
+    ######
+    #
+    elif player == 12:
+        if getting_team_name:
+            return 'loyal vengeful'
+        else:
+            # use history, opponent_history, score, opponent_score
+            # to compute your strategy
+            if len(opponent_history)==0: #It's the first round: collude
+                return 'c'
+            elif history[-1]=='c' and opponent_history[-1]=='b':
+                return 'b' # betray is they were severely punished last time
+            else:
+                return 'c' #otherwise collude
     
     
 
@@ -524,13 +527,13 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
 
     ######
     ######
-    #Tamara Martin-Scurgot
+    #
     elif player == 17:
         if getting_team_name:
             return 'loyal vengeful'
         else:
             if len(opponent_history)==0: #It's the first round: collude
-                return 'z'
+                return 'c'
             elif history[-1]=='c' and opponent_history[-1]=='b':
                 return 'b' # betray is they were severely punished last time
             else:
