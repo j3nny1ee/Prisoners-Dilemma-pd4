@@ -200,11 +200,11 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
 
 
     ######
-    ######
+    ######Yoselin Prado
     #
     elif player == 4:
         if getting_team_name:
-            return 'betray every 3rd round'
+            return 'loyal vengeful'
         else:
             # use history, opponent_history, score, opponent_score
             # to compute your strategy
