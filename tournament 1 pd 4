@@ -491,6 +491,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     ######
     #
     elif player == 15:
+    #Ted Food Lin
         if getting_team_name:
             return 'loyal vengeful'
         else:
